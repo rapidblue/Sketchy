@@ -1,6 +1,8 @@
 const clearBtn = document.getElementById("clearBtn");
 const gridRow = document.querySelector("#gridRow");
+const sliderValue = document.querySelector("#myRange");
 const gridCell = document.createElement("div");
+
 gridCell.id = "gridCell";
 
 const userPrompt = 16;
@@ -27,6 +29,6 @@ clearBtn.addEventListener("click", () => {
 
 cellList.forEach((element) => {
   element.addEventListener("mouseover", (event) => {
-    element.style.backgroundColor = "blue";
+    element.style.backgroundColor = "black";
   });
 });
