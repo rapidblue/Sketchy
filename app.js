@@ -1,34 +1,56 @@
+// Declare html elements
 const clearBtn = document.getElementById("clearBtn");
 const gridRow = document.querySelector("#gridRow");
 const sliderValue = document.querySelector("#myRange");
-const gridCell = document.createElement("div");
+const sliderValSqr = document.querySelector("#sliderValSqr");
 
+// Create div element with an ID of gridCell
+const gridCell = document.createElement("div");
 gridCell.id = "gridCell";
 
-const userPrompt = 16;
-
+// This function creates a single row of cells based off the slider input
 const rowMake = function () {
-  for (let i = 0; i < userPrompt; i++) {
+  for (let i = 0; i < sliderValue.value; i++) {
     gridRow.appendChild(gridCell.cloneNode(true));
-    gridRow.style.gridTemplateColumns = `repeat(${userPrompt}, 1fr)`;
-    gridRow.style.gridTemplateRows = `repeat(${userPrompt}, 1fr)`;
+    gridRow.style.gridTemplateColumns = `repeat(${sliderValue.value}, 1fr)`;
+    gridRow.style.gridTemplateRows = `repeat(${sliderValue.value}, 1fr)`;
   }
 };
 
-for (let i = 0; i < userPrompt; i++) {
+// Loop to call the rowMake function based on slider input
+for (let i = 0; i < sliderValue.value; i++) {
   rowMake();
 }
 
+// Create a nodelist for all div with an ID of gridCell
 const cellList = document.querySelectorAll("#gridCell");
 
+// Clear button function to turn all items in the nodelist white
 clearBtn.addEventListener("click", () => {
   cellList.forEach((element) => {
     element.style.backgroundColor = "white";
   });
 });
 
+// Color in nodes in the nostlist on mouse hover
+
 cellList.forEach((element) => {
-  element.addEventListener("mouseover", (event) => {
+  element.addEventListener("mouseover", () => {
     element.style.backgroundColor = "black";
   });
 });
+
+// Slider
+sliderValue.addEventListener("input", () => {
+  function clear() {
+    cellList.forEach((element) => {
+      element.style.backgroundColor = "white";
+    });
+  }
+
+  clear();
+  rowMake();
+  sliderValSqr.textContent = `${sliderValue.value} x ${sliderValue.value}`;
+});
+
+// sliderValSqr.textContent = `${sliderValue.value} x ${sliderValue.value}`;
