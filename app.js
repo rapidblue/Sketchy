@@ -3,6 +3,8 @@ const clearBtn = document.getElementById("clearBtn");
 const gridRow = document.querySelector("#gridRow");
 const sliderValue = document.querySelector("#myRange");
 const sliderValSqr = document.querySelector("#sliderValSqr");
+const rainbowBtn = document.querySelector(".rainbow");
+const normalBtn = document.querySelector(".normal");
 
 // Create div element with an ID of gridCell
 const gridCell = document.createElement("div");
@@ -33,7 +35,6 @@ clearBtn.addEventListener("click", () => {
 });
 
 // Color in nodes in the nostlist on mouse hover
-
 cellList.forEach((element) => {
   element.addEventListener("mouseover", () => {
     element.style.backgroundColor = "black";
@@ -51,4 +52,27 @@ sliderValue.addEventListener("input", () => {
   clear();
   sliderValSqr.textContent = `${sliderValue.value} x ${sliderValue.value}`;
   rowMake();
+});
+
+const rainbow = () => {
+  let x = Math.floor(Math.random() * 16777215).toString(16);
+  return `#${x}`;
+};
+
+//Added function to rainbow button
+rainbowBtn.addEventListener("click", () => {
+  cellList.forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      element.style.backgroundColor = rainbow();
+    });
+  });
+});
+
+//Added function to normal button
+normalBtn.addEventListener("click", () => {
+  cellList.forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      element.style.backgroundColor = "black";
+    });
+  });
 });

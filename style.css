@@ -7,6 +7,45 @@ body {
 }
 #container {
   text-align: center;
+  width: 550px;
+}
+.rainbow {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+  background-color: palevioletred;
+}
+
+.rainbow:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+
+.normal {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+}
+
+.normal:hover {
+  cursor: pointer;
 }
 
 #clearBtn {
@@ -26,7 +65,6 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 10px rgb(158, 158, 158);
-
   flex-wrap: wrap;
   width: 530px;
   height: 530px;
