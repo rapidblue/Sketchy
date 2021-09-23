@@ -1,3 +1,4 @@
+const clearBtn = document.getElementById("clearBtn");
 const gridRow = document.querySelector("#gridRow");
 const gridCell = document.createElement("div");
 gridCell.id = "gridCell";
@@ -13,6 +14,12 @@ for (let i = 0; i < 16; i++) {
 }
 
 const cellList = document.querySelectorAll("#gridCell");
+
+clearBtn.addEventListener("click", () => {
+  cellList.forEach((element) => {
+    element.style.backgroundColor = "white";
+  });
+});
 
 cellList.forEach((element) => {
   element.addEventListener("mouseover", (event) => {
