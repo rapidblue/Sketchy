@@ -5,6 +5,7 @@ const sliderValue = document.querySelector("#myRange");
 const sliderValSqr = document.querySelector("#sliderValSqr");
 const rainbowBtn = document.querySelector(".rainbow");
 const normalBtn = document.querySelector(".normal");
+const body = document.querySelector("body");
 
 // Create div element with an ID of gridCell
 const gridCell = document.createElement("div");
@@ -64,6 +65,7 @@ rainbowBtn.addEventListener("click", () => {
   cellList.forEach((element) => {
     element.addEventListener("mouseover", () => {
       element.style.backgroundColor = rainbow();
+      body.style.backgroundImage = `url("https://image.emojipng.com/253/11544253.jpg")`;
     });
   });
 });
@@ -73,6 +75,7 @@ normalBtn.addEventListener("click", () => {
   cellList.forEach((element) => {
     element.addEventListener("mouseover", () => {
       element.style.backgroundColor = "black";
+      body.style.backgroundImage = ``;
     });
   });
 });
