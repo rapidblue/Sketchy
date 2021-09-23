@@ -5,19 +5,25 @@ body {
   justify-content: center;
   align-items: center;
   background-size: 650px;
+  height: 100vh;
 }
 #container {
   text-align: center;
-  width: 550px;
+  width: 960px;
   background-color: white;
+  display: grid;
+  height: 600px;
+  grid: repeat(1, 1fr) / repeat(2, 1fr);
+  /* box-shadow: 0px 0px 20px rgb(119, 119, 119); */
+  padding: 20px;
 }
 .rainbow {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
+  width: 380px;
   font-size: 30px;
-  width: 100%;
   margin: 10px 0px 0px 0px;
   background-color: palevioletred;
 }
@@ -42,7 +48,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 30px;
-  width: 100%;
+  width: 380px;
   margin: 10px 0px 0px 0px;
 }
 
@@ -53,7 +59,7 @@ body {
 #clearBtn {
   padding: 10px;
   margin: 30px 0px 30px 0px;
-  width: 100%;
+  width: 380px;
   background-color: #00aeff;
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -87,7 +93,7 @@ body {
 }
 
 #gridSlider {
-  width: 100%;
+  width: 380px;
   padding: 30px 0px 30px 0px;
 }
 
@@ -128,6 +134,26 @@ body {
 
 #sliderValSqr {
   color: #00aeff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.ui {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 30px; */
+}
+
+#favcolor {
+  width: 100px;
+  height: 100px;
+}
+
+.colorbtn {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-transform: uppercase;

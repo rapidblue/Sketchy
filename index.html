@@ -9,24 +9,41 @@
   </head>
   <body>
     <div id="container">
-      <button class="rainbow">🦄IMAGINATION🦄</button>
-      <button class="normal">📝Back to normal📝</button>
-      <button id="clearBtn">Clear Canvas</button>
+      <div class="ui">
+        <button class="rainbow">🦄IMAGINATION🦄</button>
+        <button class="normal">🚦COLOR MODE🚦</button>
+        <button id="clearBtn">Clear Canvas</button>
+        <span class="colorbtn">Choose a color</span>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+        <div id="gridSlider">
+          <span class="sliderTitle">Grid Size</span>
+          <input
+            type="range"
+            min="1"
+            max="50"
+            value="25"
+            class="slider"
+            id="myRange"
+          />
+
+          <span id="sliderValSqr"></span>
+        </div>
+      </div>
       <div id="grid">
         <div id="gridRow"></div>
       </div>
-      <div id="gridSlider">
+      <!-- <div id="gridSlider">
         <span class="sliderTitle">Grid Size</span>
         <input
           type="range"
           min="1"
           max="50"
-          value="50"
+          value="25"
           class="slider"
           id="myRange"
         />
         <span id="sliderValSqr"></span>
-      </div>
+      </div> -->
     </div>
     <script src="app.js"></script>
   </body>

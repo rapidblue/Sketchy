@@ -38,29 +38,29 @@ clearBtn.addEventListener("click", () => {
 // Color in nodes in the nostlist on mouse hover
 cellList.forEach((element) => {
   element.addEventListener("mouseover", () => {
-    element.style.backgroundColor = "black";
+    element.style.backgroundColor = favColor();
   });
 });
 
-// Slider
+// Slider to set grid size and reset canvas
 sliderValue.addEventListener("input", () => {
   function clear() {
     cellList.forEach((element) => {
       element.style.backgroundColor = "white";
     });
   }
-
   clear();
   sliderValSqr.textContent = `${sliderValue.value} x ${sliderValue.value}`;
   rowMake();
 });
 
+//Rainbow function to randomize colors
 const rainbow = () => {
   let x = Math.floor(Math.random() * 16777215).toString(16);
   return `#${x}`;
 };
 
-//Added function to rainbow button
+//Added function to rainbow button & a little meme
 rainbowBtn.addEventListener("click", () => {
   cellList.forEach((element) => {
     element.addEventListener("mouseover", () => {
@@ -69,12 +69,15 @@ rainbowBtn.addEventListener("click", () => {
     });
   });
 });
+const favColor = () => {
+  return document.querySelector("#favcolor").value;
+};
 
 //Added function to normal button
 normalBtn.addEventListener("click", () => {
   cellList.forEach((element) => {
     element.addEventListener("mouseover", () => {
-      element.style.backgroundColor = "black";
+      element.style.backgroundColor = favColor();
       body.style.backgroundImage = ``;
     });
   });
