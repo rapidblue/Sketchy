@@ -10,15 +10,15 @@ gridCell.id = "gridCell";
 
 // This function creates a single row of cells based off the slider input
 const rowMake = function () {
-  for (let i = 0; i < sliderValue.value; i++) {
+  for (let i = 0; i < sliderValue.max; i++) {
     gridRow.appendChild(gridCell.cloneNode(true));
     gridRow.style.gridTemplateColumns = `repeat(${sliderValue.value}, 1fr)`;
     gridRow.style.gridTemplateRows = `repeat(${sliderValue.value}, 1fr)`;
   }
 };
 
-// Loop to call the rowMake function based on slider input
-for (let i = 0; i < sliderValue.value; i++) {
+// Loop to call the rowMake function based on slider max value
+for (let i = 0; i < sliderValue.max; i++) {
   rowMake();
 }
 
@@ -49,8 +49,6 @@ sliderValue.addEventListener("input", () => {
   }
 
   clear();
-  rowMake();
   sliderValSqr.textContent = `${sliderValue.value} x ${sliderValue.value}`;
+  rowMake();
 });
-
-// sliderValSqr.textContent = `${sliderValue.value} x ${sliderValue.value}`;
